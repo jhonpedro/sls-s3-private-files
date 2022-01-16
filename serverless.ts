@@ -1,6 +1,6 @@
 import type { AWS } from '@serverless/typescript'
 
-import hello from '@functions/new-doc'
+import newDoc from '@functions/new-doc'
 import getDoc from '@functions/get-doc'
 
 const VARS = {
@@ -40,7 +40,7 @@ const serverlessConfiguration: AWS = {
 		lambdaHashingVersion: '20201221',
 	},
 	// import the function via paths
-	functions: { hello, getDoc },
+	functions: { hello: newDoc, getDoc },
 	resources: {
 		Resources: {
 			PrivateBucket: {
