@@ -38,6 +38,11 @@ const serverlessConfiguration: AWS = {
 			S3_BUCKET_REGION: VARS.S3_BUCKET_REGION,
 		},
 		lambdaHashingVersion: '20201221',
+		iam: {
+			role: {
+				statements: [{ Effect: 'Allow', Action: ['s3:*'], Resource: '*' }],
+			},
+		},
 	},
 	// import the function via paths
 	functions: { hello: newDoc, getDoc },
